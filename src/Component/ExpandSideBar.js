@@ -1,10 +1,21 @@
 import { React, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 // import { CSSTransition } from 'react-transition-group'
-import { motion } from 'framer-motion'
+// import { motion } from 'framer-motion'
+import { animated, useSpring } from '@react-spring/web'
 
 function ExpandSideBar(props) {
-    const [addActive, setAddActive] = useState('home_menu_')
+    // const { expandNav } = props;
+    const [addActive, setAddActive] = useState('home_menu_');
+    const styles = useSpring({
+        from: {
+            width: "6%",
+        },
+        to: {
+            width: "13%",
+        },
+        config: { mass: 5, tension: 350, friction: 40 },
+    })
     useEffect(() => {
         const allIds = ["home_menu_", "auction", "articles_menu_", "top_menu_", "trending_menu_", "latest_menu_", "movies_menu_", "popular_channels_menu_", "shorts_menu_"]
         allIds.forEach((element) => {
@@ -27,7 +38,7 @@ function ExpandSideBar(props) {
         //     classNames="sidebarTransition"
         //     unmountOnExit>
         <div className='expandNav '>
-            <motion.div
+            {/* <motion.div
                 initial={{
                     opacity: 1,
                     width: 0,
@@ -35,9 +46,9 @@ function ExpandSideBar(props) {
                 }}
                 animate={{ opacity: 1, duration: '5s' }}
                 transition={{ duration: '5s' }}
-            // exit={{ width:0., transition: { duration: 0.3 } }}
-            >
-                <div className="yp_side_drawer">
+                exit={{ width:0., transition: { duration: 0.3 } }}> */}
+            <div >
+                <animated.div style={styles} className="yp_side_drawer" >
                     <span className="open_side_menu_head hide-from-mobile">
                         <span >
                             <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" onClick={props.expandNavClick}>
@@ -178,8 +189,10 @@ function ExpandSideBar(props) {
                         <p className="copyright">Copyright © 2022 ClikView. All rights reserved.</p>
 
                     </footer>
-                </div>
-            </motion.div>
+                </animated.div>
+            </div>
+            {/* </motion.div> */}
+
         </div>
         // </CSSTransition>
     )

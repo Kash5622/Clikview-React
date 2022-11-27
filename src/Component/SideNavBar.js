@@ -1,16 +1,31 @@
 import { React, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { CSSTransition } from 'react-transition-group'
+import { animated, useSpring } from '@react-spring/web'
 
 function SideNavBar() {
     const [addActive, setAddActive] = useState('home_menu_')
+    const styles = useSpring({
+        from: {
+            width: "13%",
+            color:"rgba(3, 5, 7)",
+            transition: 300,
+            delay:300,
+            duration: 5000,
+        },
+        to: {
+            width: "4%",
+            delay:300,
+            duration: 5000,
+        }
+    })
     useEffect(() => {
         const allIds = ["home_menu_", "auction", "articles_menu_", "top_menu_", "trending_menu_", "latest_menu_", "movies_menu_", "popular_channels_menu_", "shorts_menu_"]
         allIds.forEach((element) => {
-        console.log(element);
-        if(document.getElementById(element).classList.contains('active')){
-            document.getElementById(element).classList.remove('active')
-        }
+            console.log(element);
+            if (document.getElementById(element).classList.contains('active')) {
+                document.getElementById(element).classList.remove('active')
+            }
         });
         const addActiveClass = (addActive) => {
             document.getElementById(addActive).classList.add('active');
@@ -20,11 +35,12 @@ function SideNavBar() {
     }, [addActive]);
 
     return (
-        <CSSTransition
-            timeout={300}
-            classNames="">
+        // <CSSTransition
+        //     timeout={300}
+        //     classNames="">
             <div className='sideNavBar '>
-                <div className="yp_side_drawer">
+                <div className="">
+                <animated.div style={styles} className="yp_side_drawer">
                     <ul className="sections">
                         <li className='hide-from-mobile' id="home_menu_" onClick={() => { setAddActive("home_menu_") }}>
                             <Link to="/home2/" >
@@ -106,9 +122,10 @@ function SideNavBar() {
                             </Link>
                         </li>
                     </ul>
+                </animated.div >
                 </div>
             </div>
-        </CSSTransition>
+        // </CSSTransition>
     )
 }
 

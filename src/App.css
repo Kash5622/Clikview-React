@@ -393,7 +393,7 @@ svg {
   position: absolute;
   overflow: hidden;
   background-color: #181818;
-  transition: all 0.3s;
+  transition: all 1s;
   top: 55px;
 }
 
@@ -1433,7 +1433,7 @@ title h4 {
 }
 
 .shrinkWidth {
-  width: 87%
+  width: 88%
 }
 
 .expandWidth {
