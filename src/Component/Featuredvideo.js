@@ -126,6 +126,12 @@ function Featuredvideo() {
       }
     ]
   };
+  function addPlayBtn(){
+    
+  }
+  function removePlayBtn(){
+
+  }
   return (
     <div className=" container-home hide_trend" Style="position: relative; background: transparent; margin-top: -6%;">
 
@@ -155,8 +161,8 @@ function Featuredvideo() {
                         <div className="video-list-image">
                           <Link to="/" data-load="?link1=watch&amp;id=how-to-relax-a-overactive-mind_p7gNF3uhQx7lTgm.html" tabIndex="0">
                             <img src={element.videoImg} alt="How to Relax an Overactive Mind" />
-                            <div className="play_hover_btn" onMouseEnter="show_gif(this,'https://clikview.com/upload/videos/2022/10/bUMXp4QF8aqtZO86uUOU_21_bf2030127e2335e388591ef555122fdd6c3b51b5ba4d1bb7ac9e97b09eff6d_small_video_.gif')" onmouseleave="hide_gif(this)">
-                              <svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>
+                            <div className="play_hover_btn" onMouseEnter={addPlayBtn()} onmouseleave={removePlayBtn()}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-play-circle feather"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
                             </div>
                             <span className="duration">{element.duration}</span>
                           </Link>

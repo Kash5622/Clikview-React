@@ -1,6 +1,5 @@
 import { React, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { CSSTransition } from 'react-transition-group'
 import { animated, useSpring } from '@react-spring/web'
 
 function SideNavBar() {
@@ -35,9 +34,6 @@ function SideNavBar() {
     }, [addActive]);
 
     return (
-        // <CSSTransition
-        //     timeout={300}
-        //     classNames="">
             <div className='sideNavBar '>
                 <div className="">
                 <animated.div style={styles} className="yp_side_drawer">
@@ -125,7 +121,6 @@ function SideNavBar() {
                 </animated.div >
                 </div>
             </div>
-        // </CSSTransition>
     )
 }
 

@@ -1,11 +1,8 @@
 import { React, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-// import { CSSTransition } from 'react-transition-group'
-// import { motion } from 'framer-motion'
 import { animated, useSpring } from '@react-spring/web'
 
 function ExpandSideBar(props) {
-    // const { expandNav } = props;
     const [addActive, setAddActive] = useState('home_menu_');
     const styles = useSpring({
         from: {
@@ -32,21 +29,7 @@ function ExpandSideBar(props) {
     }, [addActive]);
     return (
 
-        // <CSSTransition
-        //     timeout={300}
-        //     in={props.expandNav}
-        //     classNames="sidebarTransition"
-        //     unmountOnExit>
         <div className='expandNav '>
-            {/* <motion.div
-                initial={{
-                    opacity: 1,
-                    width: 0,
-                    x: 0
-                }}
-                animate={{ opacity: 1, duration: '5s' }}
-                transition={{ duration: '5s' }}
-                exit={{ width:0., transition: { duration: 0.3 } }}> */}
             <div >
                 <animated.div style={styles} className="yp_side_drawer" >
                     <span className="open_side_menu_head hide-from-mobile">
@@ -191,10 +174,7 @@ function ExpandSideBar(props) {
                     </footer>
                 </animated.div>
             </div>
-            {/* </motion.div> */}
-
         </div>
-        // </CSSTransition>
     )
 }
 
