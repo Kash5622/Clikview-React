@@ -1703,6 +1703,10 @@ header .dropdown-menu.ani_log_menu li a {
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: center;
+  background-color: #f0f0f0;
+  z-index: 10;
+  color: #000;
+  height: 100%;
 }
 
 .swiper-button-prev {
@@ -1711,6 +1715,10 @@ header .dropdown-menu.ani_log_menu li a {
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: center;
+  background-color: #f0f0f0;
+  z-index: 10;
+  color: #000;
+  height: 100%;
 }
 
 .btn {
@@ -1845,10 +1853,12 @@ nav.navbar-findcond .search-header {
 }
 
 .activePlayBtn {
-  opacity: 1;
-  visibility: visible;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
-
+.articleHover{
+  transform: scale(1.1) !important;
+}
 /* Night Mode CSS */
 p,
 span,

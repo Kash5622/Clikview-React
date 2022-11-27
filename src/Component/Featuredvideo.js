@@ -126,11 +126,13 @@ function Featuredvideo() {
       }
     ]
   };
-  function addPlayBtn(){
-    
+  function addPlayBtn(id){
+    let divId="featuredVideo"+id;
+    document.getElementById(`${divId}`).classList.add('activePlayBtn');
   }
-  function removePlayBtn(){
-
+  function removePlayBtn(id){
+    let divId="featuredVideo"+id;
+    document.getElementById(`${divId}`).classList.remove('activePlayBtn');
   }
   return (
     <div className=" container-home hide_trend" Style="position: relative; background: transparent; margin-top: -6%;">
@@ -158,10 +160,10 @@ function Featuredvideo() {
                   return <div key={element.index}>
                     <div className="col-md-3 col-sm-6 col-xs-6 keep-padding" data-id="4547" Style="width: 100%; display: inline-block;">
                       <div className="video-list">
-                        <div className="video-list-image">
+                        <div className="video-list-image" onMouseEnter={()=>{addPlayBtn(element.videoId)}} onMouseLeave={()=>{removePlayBtn(element.videoId)}}>
                           <Link to="/" data-load="?link1=watch&amp;id=how-to-relax-a-overactive-mind_p7gNF3uhQx7lTgm.html" tabIndex="0">
                             <img src={element.videoImg} alt="How to Relax an Overactive Mind" />
-                            <div className="play_hover_btn" onMouseEnter={addPlayBtn()} onmouseleave={removePlayBtn()}>
+                            <div className="play_hover_btn" id={"featuredVideo"+element.videoId} >
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-play-circle feather"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
                             </div>
                             <span className="duration">{element.duration}</span>
