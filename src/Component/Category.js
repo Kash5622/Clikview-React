@@ -13,9 +13,9 @@ function Category() {
     //const navigate = useNavigate();
     // const data = [{ name: 'Animation' }, { name: 'Business' }, { name: "Pets&Animals" }, { name: 'Sports' }, { name: 'Travel&Events', }, { name: 'Motivation', }, { name: 'People&Blogs', }, { name: 'AdvancedMedicine', }, { name: 'DigitalMarketing', }, { name: 'News&Politics' },]
     let displayWidth = window.screen.width;
-    var showCategory = 13;
+    var showCategory = 11;
     if (displayWidth > 770 && displayWidth < 1200) {
-        showCategory = 3
+        showCategory = 5
     }
     else if (displayWidth < 770 && displayWidth > 550) {
         showCategory = 3
