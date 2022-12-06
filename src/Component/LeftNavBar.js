@@ -10,7 +10,7 @@ function LeftNavBar(props) {
                     </span>
                 </div>
                 <Link className="navbar-brand logo-img" to="/home2/" itemProp="url">
-                    <img itemProp="logo" src="https://clikview.com/themes/youplay/img/logo-light.png?cache=611" alt="ClikView - Real Content For You" />
+                    <img itemProp="logo" src="https://clikview.com/themes/youplay/img/logo.png?cache=611" alt="ClikView - Real Content For You" />
                 </Link>
             </div>
     )

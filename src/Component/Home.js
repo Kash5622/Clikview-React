@@ -14,7 +14,7 @@ import TravelsandEvents from './TravelandEvents'
 import TrendingVideo from './TrendingVideo'
 
 function Home(props) {
-  const {searchOpen,expandNav}=props;
+  const {searchOpen,expandNav,enableDarkMode}=props;
   useEffect(() => {
     
     return () => {

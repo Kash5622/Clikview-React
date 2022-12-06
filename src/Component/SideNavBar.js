@@ -36,7 +36,7 @@ function SideNavBar() {
     return (
             <div className='sideNavBar '>
                 <div className="">
-                <animated.div style={styles} className="yp_side_drawer">
+                <animated.div Style={styles} className="yp_side_drawer">
                     <ul className="sections">
                         <li className='hide-from-mobile' id="home_menu_" onClick={() => { setAddActive("home_menu_") }}>
                             <Link to="/home2/" >
