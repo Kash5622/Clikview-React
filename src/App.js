@@ -18,6 +18,7 @@ import VideoStudio from './Component/VideoStudio';
 import CreateProduct from './Component/CreateProduct';
 import Subscription from './Component/Subscription';
 import CvMainWallet from './Component/CvMainWallet';
+import Advertising from './Component/Advertising';
 // import { useTransition, animated, } from 'react-spring'
 
 function App() {
@@ -60,6 +61,7 @@ function App() {
           <Route exact path='/home2/createproduct' element={<CreateProduct searchOpen={searchOpen} expandNav={expandNav} />} />
           <Route exact path='/home2/subscriptions' element={<Subscription searchOpen={searchOpen} expandNav={expandNav} />} />
           <Route exact path='/home2/cvmainwallet' element={<CvMainWallet searchOpen={searchOpen} expandNav={expandNav} />} />
+          <Route exact path='/home2/advertising' element={<Advertising searchOpen={searchOpen} expandNav={expandNav} />} />
         </Routes>
         {/* {transition((style, item) => { */}
           
